@@ -1,12 +1,17 @@
-import { Link } from "expo-router";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
+import { router } from "expo-router";
 
 export default function Index() {
+  function signUp() {
+    router.navigate("/sign-up");
+  }
+
   return (
     <View style={styles.container}>
-      <Link href="/sign-up" style={styles.new}>
-        Criar conta
-      </Link>
+      <TouchableOpacity style={styles.button} onPress={signUp}>
+        <Text style={styles.label}>Criar Conta</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -16,9 +21,17 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    gap: 32,
   },
-  new: {
+  label: {
     fontSize: 16,
     fontWeight: "bold",
+    color: "#FFF",
+  },
+  button: {
+    backgroundColor: "#000",
+    paddingHorizontal: 32,
+    paddingVertical: 10,
+    borderRadius: 10,
   },
 });
