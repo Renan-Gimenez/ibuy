@@ -1,6 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-import { DrawerToggleButton } from "@react-navigation/drawer";
 import { router } from "expo-router";
 
 export default function Index() {
@@ -10,9 +9,6 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <DrawerToggleButton tintColor="red" />
-      </View>
       <TouchableOpacity style={styles.button} onPress={signUp}>
         <Text style={styles.label}>Criar Conta</Text>
       </TouchableOpacity>
@@ -23,10 +19,9 @@ export default function Index() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: "center",
+    justifyContent: "center",
     alignItems: "center",
     gap: 32,
-    padding: 32,
   },
   label: {
     fontSize: 16,
@@ -38,10 +33,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     paddingVertical: 10,
     borderRadius: 10,
-  },
-  header: {
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "flex-end",
   },
 });
