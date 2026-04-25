@@ -1,10 +1,10 @@
+import { FocusedStatusBar } from "@/components/FocusedStatusBar";
 import { Stack } from "expo-router";
-import { StatusBar } from "expo-status-bar";
 
 export default function Layout() {
   return (
     <>
-      <StatusBar style="dark" />
+      <FocusedStatusBar style="light" animated />
       <Stack screenOptions={{ headerShown: false }} />
     </>
   );
